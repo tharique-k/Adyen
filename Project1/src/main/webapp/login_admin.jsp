@@ -118,7 +118,7 @@ a {
 <body>
 	<div class="main">
 		<p class="sign" align="center">Sign in (Admin)</p>
-		<form action="Controller_Login" method="post" class="form1">
+		<form action="ControllerAdminLogin" method="post" class="form1">
 			<input class="un" type="text" align="center" placeholder="Username" name="username">
 			<input class="pass" type="password" align="center" placeholder="Password" name="Password">
 			<input type="submit" class="submit" align="center" value="Sign in">

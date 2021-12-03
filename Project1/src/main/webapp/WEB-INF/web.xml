@@ -40,10 +40,10 @@
   	<listener-class>com.ecommapp.listeners.SessionControlListener</listener-class>
   </listener>
   <servlet>
-  	<servlet-name>Controller_Login</servlet-name>
-  	<display-name>Controller_Login</display-name>
+  	<servlet-name>ControllerAdminLogin</servlet-name>
+  	<display-name>ControllerAdminLogin</display-name>
   	<description></description>
-  	<servlet-class>com.ecommapp.servlets.Controller_Login</servlet-class>
+  	<servlet-class>com.ecommapp.servlets.ControllerAdminLogin</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>homeAdmin</servlet-name>
@@ -118,8 +118,8 @@
   	<servlet-class>com.ecommapp.servlets.ControllerCustomerAuth</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Controller_Login</servlet-name>
-  	<url-pattern>/Controller_Login</url-pattern>
+  	<servlet-name>ControllerAdminLogin</servlet-name>
+  	<url-pattern>/ControllerAdminLogin</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>homeAdmin</servlet-name>
