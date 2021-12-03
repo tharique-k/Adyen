@@ -1,0 +1,54 @@
+package com.ecommapp.filters;
+
+import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+import com.ecommapp.servlets.Controller_shoppingCart;
+
+/**
+ * Servlet Filter implementation class Controller_shoppingCartJSP
+ */
+public class Controller_shoppingCartJSP implements Filter {
+
+    /**
+     * Default constructor. 
+     */
+    public Controller_shoppingCartJSP() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see Filter#destroy()
+	 */
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+	 */
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		// TODO Auto-generated method stub
+		// place your code here
+
+		// pass the request along the filter chain
+		request.setAttribute("shoppingProducts", com.ecommapp.servlets.Controller_shoppingCart.list);
+		RequestDispatcher rd = request.getRequestDispatcher("shoppingCart.jsp");
+		rd.forward(request, response);
+	}
+
+	/**
+	 * @see Filter#init(FilterConfig)
+	 */
+	public void init(FilterConfig fConfig) throws ServletException {
+		// TODO Auto-generated method stub
+	}
+
+}
