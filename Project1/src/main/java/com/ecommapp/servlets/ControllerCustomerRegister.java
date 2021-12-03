@@ -41,12 +41,12 @@ public class ControllerCustomerRegister extends HttpServlet {
 		MongoDatabase mb = client.getDatabase(MongoSettingLoc.DbName);
 		MongoCollection mc = mb.getCollection("users");
 		List<BasicDBObject> list = new ArrayList<BasicDBObject>();
-		String customerName = request.getParameter("customerName");
-		String customerPassword = request.getParameter("customerPassword");
+		String customerName = request.getParameter("username");
+		String customerPassword = request.getParameter("password");
 		Document doc = new Document();
 		doc.append("name", customerName).append("password", customerPassword);
 		mc.insertOne(doc);
-		response.sendRedirect("customerLogin.jsp");
+		response.sendRedirect("registered.jsp");
 		
 	}
 

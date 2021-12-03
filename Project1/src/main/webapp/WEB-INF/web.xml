@@ -11,13 +11,13 @@
   	<filter-class>com.ecommapp.filters.SessionControl</filter-class>
   </filter>
   <filter>
-  	<filter-name>Controller_shoppingCartJSP</filter-name>
-  	<display-name>Controller_shoppingCartJSP</display-name>
+  	<filter-name>ControllerShoppingCartJSP</filter-name>
+  	<display-name>ControllerShoppingCartJSP</display-name>
   	<description></description>
-  	<filter-class>com.ecommapp.filters.Controller_shoppingCartJSP</filter-class>
+  	<filter-class>com.ecommapp.filters.ControllerShoppingCartJSP</filter-class>
   </filter>
    <filter-mapping>
-  	<filter-name>Controller_shoppingCartJSP</filter-name>
+  	<filter-name>ControllerShoppingCartJSP</filter-name>
   	<url-pattern>/shoppingCart.jsp</url-pattern>
   </filter-mapping>
   <filter-mapping>
@@ -31,6 +31,10 @@
   <filter-mapping>
   	<filter-name>SessionControl</filter-name>
   	<url-pattern>/home</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>SessionControl</filter-name>
+  	<url-pattern>/ControllerShowProduct</url-pattern>
   </filter-mapping>
   <listener>
   	<listener-class>com.ecommapp.listeners.SessionControlListener</listener-class>

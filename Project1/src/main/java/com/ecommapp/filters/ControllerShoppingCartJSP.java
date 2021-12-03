@@ -15,12 +15,12 @@ import com.ecommapp.servlets.ControllerShoppingCart;
 /**
  * Servlet Filter implementation class Controller_shoppingCartJSP
  */
-public class Controller_shoppingCartJSP implements Filter {
+public class ControllerShoppingCartJSP implements Filter {
 
     /**
      * Default constructor. 
      */
-    public Controller_shoppingCartJSP() {
+    public ControllerShoppingCartJSP() {
         // TODO Auto-generated constructor stub
     }
 

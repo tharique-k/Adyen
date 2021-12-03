@@ -42,7 +42,6 @@ public class ControllerShowProduct extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("pid :"+Long.parseLong(request.getParameter("pid")));
 		long pid = Long.parseLong(request.getParameter("pid"));
 		MongoClient client = MongoClients.create(MongoSettingLoc.URL);
 		MongoDatabase mb = client.getDatabase(MongoSettingLoc.DbName);

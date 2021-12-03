@@ -29,9 +29,9 @@ public class ControllerCustomerAuth extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		String name = request.getParameter("username");
-		String pass = request.getParameter("Password");
+		String pass = request.getParameter("password");
 		MongoClient client = MongoClients.create(MongoSettingLoc.URL);
 		MongoDatabase mb = client.getDatabase(MongoSettingLoc.DbName);
 		MongoCollection<Document> mc = mb.getCollection("users");
@@ -46,7 +46,7 @@ public class ControllerCustomerAuth extends HttpServlet {
 		if (cursor.hasNext()) {
 			HttpSession session = request.getSession(true);
 			session.setMaxInactiveInterval(15*60); //15 minutes
-			url = "/home";
+			url = "home";
 			session.setAttribute("name", name);
 		} else {
 			url = "index.jsp";
