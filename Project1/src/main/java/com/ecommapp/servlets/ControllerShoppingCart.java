@@ -24,14 +24,14 @@ import com.mongodb.client.model.Filters;
 /**
  * Servlet implementation class Controller_shoppingCart
  */
-public class Controller_shoppingCart extends HttpServlet {
+public class ControllerShoppingCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static List<Document> list = new ArrayList<Document>();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Controller_shoppingCart() {
+    public ControllerShoppingCart() {
         super();
         // TODO Auto-generated constructor stub
     }

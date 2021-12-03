@@ -60,16 +60,16 @@
   	<servlet-class>com.ecommapp.servlets.ControllerAddProduct</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>Controller_showProduct</servlet-name>
-  	<display-name>Controller_showProduct</display-name>
+  	<servlet-name>ControllerShowProduct</servlet-name>
+  	<display-name>ControllerShowProduct</display-name>
   	<description></description>
-  	<servlet-class>com.ecommapp.servlets.Controller_showProduct</servlet-class>
+  	<servlet-class>com.ecommapp.servlets.ControllerShowProduct</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>Controller_home</servlet-name>
-  	<display-name>Controller_home</display-name>
+  	<servlet-name>ControllerHome</servlet-name>
+  	<display-name>ControllerHome</display-name>
   	<description></description>
-  	<servlet-class>com.ecommapp.servlets.Controller_home</servlet-class>
+  	<servlet-class>com.ecommapp.servlets.ControllerHome</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>ShoppingCart</servlet-name>
@@ -84,10 +84,10 @@
   	<servlet-class>com.ecommapp.servlets.ControllerCustomerRegister</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>Controller_shoppingCart</servlet-name>
-  	<display-name>Controller_shoppingCart</display-name>
+  	<servlet-name>ControllerShoppingCart</servlet-name>
+  	<display-name>ControllerShoppingCart</display-name>
   	<description></description>
-  	<servlet-class>com.ecommapp.servlets.Controller_shoppingCart</servlet-class>
+  	<servlet-class>com.ecommapp.servlets.ControllerShoppingCart</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>shoppingCart</servlet-name>
@@ -130,11 +130,11 @@
   	<url-pattern>/addProduct</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>Controller_showProduct</servlet-name>
-  	<url-pattern>/Controller_showProduct</url-pattern>
+  	<servlet-name>ControllerShowProduct</servlet-name>
+  	<url-pattern>/ControllerShowProduct</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>Controller_home</servlet-name>
+  	<servlet-name>ControllerHome</servlet-name>
   	<url-pattern>/home</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
@@ -146,8 +146,8 @@
   	<url-pattern>/register</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>Controller_shoppingCart</servlet-name>
-  	<url-pattern>/Controller_shoppingCart</url-pattern>
+  	<servlet-name>ControllerShoppingCart</servlet-name>
+  	<url-pattern>/ControllerShoppingCart</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>shoppingCart</servlet-name>

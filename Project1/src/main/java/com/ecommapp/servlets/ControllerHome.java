@@ -22,13 +22,13 @@ import com.mongodb.client.MongoDatabase;
 /**
  * Servlet implementation class home
  */
-public class Controller_home extends HttpServlet {
+public class ControllerHome extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Controller_home() {
+    public ControllerHome() {
         super();
         // TODO Auto-generated constructor stub
     }

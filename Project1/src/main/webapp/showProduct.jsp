@@ -121,7 +121,7 @@ body {
 			<div class="desc">
 				<h2 class="center"><c:out value="${product.get('description')}"></c:out></h2>
 			</div>
-			<form action="Controller_shoppingCart?pid=${product.get('pid')}" method="post">
+			<form action="ControllerShoppingCart?pid=${product.get('pid')}" method="post">
 				<input type="submit" class="submit" value="Buy NOW!"
 					style="background-color: purple; color: white; border-radius: 
 					20px; border: 2px solid white; width: 150px; height: 50px; 

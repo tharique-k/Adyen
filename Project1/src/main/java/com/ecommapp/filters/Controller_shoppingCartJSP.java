@@ -10,7 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-import com.ecommapp.servlets.Controller_shoppingCart;
+import com.ecommapp.servlets.ControllerShoppingCart;
 
 /**
  * Servlet Filter implementation class Controller_shoppingCartJSP
@@ -39,7 +39,7 @@ public class Controller_shoppingCartJSP implements Filter {
 		// place your code here
 
 		// pass the request along the filter chain
-		request.setAttribute("shoppingProducts", com.ecommapp.servlets.Controller_shoppingCart.list);
+		request.setAttribute("shoppingProducts", com.ecommapp.servlets.ControllerShoppingCart.list);
 		RequestDispatcher rd = request.getRequestDispatcher("shoppingCart.jsp");
 		rd.forward(request, response);
 	}

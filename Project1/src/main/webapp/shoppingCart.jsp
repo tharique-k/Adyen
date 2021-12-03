@@ -12,8 +12,8 @@
 </head>
 <body>
 	<c:forEach items="${shoppingProducts}" var="item">
-		<a href="Controller_showProduct?pid=${item.get('pid')}"><c:out value="${item.get('name')}"></c:out></a>
-		<a href="./Controller_shoppingCart?pid=${item.get('pid')}">Delete</a>
+		<a href="ControllerShowProduct?pid=${item.get('pid')}"><c:out value="${item.get('name')}"></c:out></a>
+		<a href="./ControllerShoppingCart?pid=${item.get('pid')}">Delete</a>
 <br>
 	</c:forEach>
 </body>

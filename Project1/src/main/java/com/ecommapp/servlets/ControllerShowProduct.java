@@ -26,13 +26,13 @@ import com.mongodb.client.model.Filters;
 /**
  * Servlet implementation class Controller_home
  */
-public class Controller_showProduct extends HttpServlet {
+public class ControllerShowProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Controller_showProduct() {
+    public ControllerShowProduct() {
         super();
         // TODO Auto-generated constructor stub
     }
