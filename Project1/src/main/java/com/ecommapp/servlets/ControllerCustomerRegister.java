@@ -2,6 +2,7 @@ package com.ecommapp.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -43,8 +44,9 @@ public class ControllerCustomerRegister extends HttpServlet {
 		List<BasicDBObject> list = new ArrayList<BasicDBObject>();
 		String customerName = request.getParameter("username");
 		String customerPassword = request.getParameter("password");
+		Long customerId = new Date().getTime();
 		Document doc = new Document();
-		doc.append("name", customerName).append("password", customerPassword);
+		doc.append("name", customerName).append("password", customerPassword).append("cid", customerId);
 		mc.insertOne(doc);
 		response.sendRedirect("registered.jsp");
 		

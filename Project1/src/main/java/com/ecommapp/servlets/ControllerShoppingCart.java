@@ -54,7 +54,6 @@ public class ControllerShoppingCart extends HttpServlet {
 		mc.updateOne(searchQuery, query); 
 		MongoCursor<Document> cursor2 = mc.find(Filters.eq("pid", pid)).iterator() */;
 		list.remove(cursor.next());
-		System.out.println("geçti");
 		response.sendRedirect("shoppingCart.jsp");
 	}
 
