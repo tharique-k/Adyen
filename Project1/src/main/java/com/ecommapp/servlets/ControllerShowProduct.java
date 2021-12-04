@@ -46,7 +46,7 @@ public class ControllerShowProduct extends HttpServlet {
 		MongoClient client = MongoClients.create(MongoSettingLoc.URL);
 		MongoDatabase mb = client.getDatabase(MongoSettingLoc.DbName);
 		MongoCollection <Document> mc = mb.getCollection("products");
-		MongoCursor<Document> cursor = mc.find(Filters.eq("name","Headphone")).iterator();
+		MongoCursor<Document> cursor = mc.find(Filters.eq("pid",pid)).iterator();
 		Document document = new Document(cursor.next());
 		request.setAttribute("product", document);
 		
