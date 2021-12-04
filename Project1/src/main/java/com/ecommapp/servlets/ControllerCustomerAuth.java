@@ -46,10 +46,11 @@ public class ControllerCustomerAuth extends HttpServlet {
 		if (cursor.hasNext()) {
 			HttpSession session = request.getSession(true);
 			session.setMaxInactiveInterval(15*60); //15 minutes
-			url = "home";
+			url = "home.jsp";
 			session.setAttribute("name", name);
+			session.setAttribute("type", "customer");
 		} else {
-			url = "index.jsp";
+			url = "no_login.jsp";
 		}
 		
 		response.sendRedirect(url);

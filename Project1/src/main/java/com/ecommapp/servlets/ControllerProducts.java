@@ -22,13 +22,13 @@ import com.mongodb.client.MongoDatabase;
 /**
  * Servlet implementation class home
  */
-public class ControllerHome extends HttpServlet {
+public class ControllerProducts extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ControllerHome() {
+    public ControllerProducts() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -49,7 +49,7 @@ public class ControllerHome extends HttpServlet {
         }
 //      System.out.println(document.get(0).get("name"));
         request.setAttribute("prods", document);
-		RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("products.jsp");
 		rd.forward(request, response);
 	}
 

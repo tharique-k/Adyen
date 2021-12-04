@@ -131,7 +131,7 @@ a {
 			<input class="un" type="text" align="center" placeholder="Username" name="username">
 			<input class="pass" type="password" align="center" placeholder="Password" name="Password">
 			<input type="submit" class="submit" align="center" value="Sign in">
-			<p class="error-box">Username or Password is not correct, Please try again</p>			
+			<p class="error-box">Session Expired, Please try logging in again</p>
 			<p class="forgot" align="center"> <a href="#">Forgot Password?</a></p>
 		</form>
 	</div>

@@ -36,7 +36,7 @@ public class ControllerAdminLogin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		String name = request.getParameter("username");
 		String pass = request.getParameter("Password");
 		MongoClient client = MongoClients.create(MongoSettingLoc.URL);
@@ -53,8 +53,9 @@ public class ControllerAdminLogin extends HttpServlet {
 		if (cursor.hasNext()) {
 			HttpSession session = request.getSession(true);
 			session.setMaxInactiveInterval(15*60); //15 minutes
-			url = "./homeAdmin";
+			url = "homeAdmin.jsp";
 			session.setAttribute("name", name);
+			session.setAttribute("type", "admin");
 		} else {
 			url = "no_login.jsp";
 		}

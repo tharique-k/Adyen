@@ -22,7 +22,11 @@
   </filter-mapping>
   <filter-mapping>
   	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/homeAdmin</url-pattern>
+  	<url-pattern>/homeAdmin.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>SessionControl</filter-name>
+  	<url-pattern>/home.jsp</url-pattern>
   </filter-mapping>
   <filter-mapping>
   	<filter-name>SessionControl</filter-name>
@@ -30,13 +34,25 @@
   </filter-mapping>
   <filter-mapping>
   	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/home</url-pattern>
+  	<url-pattern>/products</url-pattern>
+  </filter-mapping>
+   <filter-mapping>
+  	<filter-name>SessionControl</filter-name>
+  	<url-pattern>/products.jsp</url-pattern>
+  </filter-mapping>
+   <filter-mapping>
+  	<filter-name>SessionControl</filter-name>
+  	<url-pattern>/showProduct.jsp</url-pattern>
   </filter-mapping>
   <filter-mapping>
   	<filter-name>SessionControl</filter-name>
   	<url-pattern>/ControllerShowProduct</url-pattern>
   </filter-mapping>
-  <listener>
+  <filter-mapping>
+  	<filter-name>SessionControl</filter-name>
+  	<url-pattern>/addProduct.jsp</url-pattern>
+  </filter-mapping>
+  <listener>	
   	<listener-class>com.ecommapp.listeners.SessionControlListener</listener-class>
   </listener>
   <servlet>
@@ -70,10 +86,10 @@
   	<servlet-class>com.ecommapp.servlets.ControllerShowProduct</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>ControllerHome</servlet-name>
-  	<display-name>ControllerHome</display-name>
+  	<servlet-name>ControllerProducts</servlet-name>
+  	<display-name>ControllerProducts</display-name>
   	<description></description>
-  	<servlet-class>com.ecommapp.servlets.ControllerHome</servlet-class>
+  	<servlet-class>com.ecommapp.servlets.ControllerProducts</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>ShoppingCart</servlet-name>
@@ -122,10 +138,6 @@
   	<url-pattern>/ControllerAdminLogin</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>homeAdmin</servlet-name>
-  	<url-pattern>/homeAdmin</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
   	<servlet-name>ControllerLogOut</servlet-name>
   	<url-pattern>/logOut</url-pattern>
   </servlet-mapping>
@@ -138,8 +150,8 @@
   	<url-pattern>/ControllerShowProduct</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>ControllerHome</servlet-name>
-  	<url-pattern>/home</url-pattern>
+  	<servlet-name>ControllerProducts</servlet-name>
+  	<url-pattern>/products</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>ShoppingCart</servlet-name>

@@ -39,12 +39,12 @@ body {
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="./homeAdmin">Admin-Home
+			<li class="nav-item"><a class="nav-link" href="./homeAdmin.jsp">Admin-Home
 					<span class="sr-only">(current)</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="./addProduct">Add-Product</a>
 			</li>
-			<li class="nav-item "><a class="nav-link" href="./home">Products</a>
+			<li class="nav-item "><a class="nav-link" href="./products">Products</a>
 			</li>
 			<li class="nav-item active"><a class="nav-link" href="./logOut">Logout</a>
 			</li>

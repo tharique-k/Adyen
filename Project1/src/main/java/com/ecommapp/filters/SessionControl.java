@@ -56,8 +56,14 @@ public class SessionControl implements Filter {
 			chain.doFilter(request, response);
 		}
 		else {
-			RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
+			if (uri.contains("admin")){
+				RequestDispatcher rd = req.getRequestDispatcher("login_admin.jsp");
+				rd.forward(req, res);
+			}
+			else {
+			RequestDispatcher rd = req.getRequestDispatcher("logged_out.jsp");
 			rd.forward(req, res);
+			}
 		}
 	}
 
