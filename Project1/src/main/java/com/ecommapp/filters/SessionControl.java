@@ -21,13 +21,6 @@ import com.sun.tools.javac.util.List;
  */
 public class SessionControl implements Filter {
 	
-	private  ArrayList<String> excludeUrls = new ArrayList<String>() {
-        {
-            add("login.js");
-            add("index.js");
-            add("admin_login.js");
-        }
-    };
 
     /**
      * Default constructor. 
@@ -52,7 +45,7 @@ public class SessionControl implements Filter {
 		HttpServletResponse res = (HttpServletResponse) response;
 		HttpSession session = req.getSession(false);
 		String uri = req.getRequestURI();
-		if(!excludeUrls.contains(uri) && session != null && session.getAttribute("name") != null) {
+		if(session != null && session.getAttribute("name") != null) {
 			chain.doFilter(request, response);
 		}
 		else {
