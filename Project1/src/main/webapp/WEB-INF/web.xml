@@ -116,18 +116,6 @@
   	<servlet-class>com.ecommapp.servlets.shoppingCart</servlet-class>
   </servlet>
    <servlet>
-  	<servlet-name>TestServlet</servlet-name>
-  	<display-name>TestServlet</display-name>
-  	<description></description>
-  	<servlet-class>com.ecommapp.servlets.TestServlet</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>TestServlet2</servlet-name>
-  	<display-name>TestServlet2</display-name>
-  	<description></description>
-  	<servlet-class>com.ecommapp.servlets.TestServlet2</servlet-class>
-  </servlet>
-   <servlet>
   	<servlet-name>ControllerCustomerAuth</servlet-name>
   	<display-name>ControllerCustomerAuth</display-name>
   	<description></description>
@@ -168,14 +156,6 @@
   <servlet-mapping>
   	<servlet-name>shoppingCart</servlet-name>
   	<url-pattern>/shoppingCart</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>TestServlet</servlet-name>
-  	<url-pattern>/search.html</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>TestServlet2</servlet-name>
-  	<url-pattern>/search2</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>ControllerCustomerAuth</servlet-name>

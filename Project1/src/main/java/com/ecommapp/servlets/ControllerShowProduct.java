@@ -49,7 +49,6 @@ public class ControllerShowProduct extends HttpServlet {
 		MongoCursor<Document> cursor = mc.find(Filters.eq("pid",pid)).iterator();
 		Document document = new Document(cursor.next());
 		request.setAttribute("product", document);
-		
 		RequestDispatcher rd = request.getRequestDispatcher("showProduct.jsp");
 		rd.forward(request, response);
 	}

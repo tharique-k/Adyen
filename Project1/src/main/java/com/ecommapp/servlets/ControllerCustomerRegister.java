@@ -17,7 +17,9 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 
 /**
  * Servlet implementation class Controller_customerRegister
@@ -40,16 +42,22 @@ public class ControllerCustomerRegister extends HttpServlet {
 		// TODO Auto-generated method stub
 		MongoClient client = MongoClients.create(MongoSettingLoc.URL);
 		MongoDatabase mb = client.getDatabase(MongoSettingLoc.DbName);
-		MongoCollection mc = mb.getCollection("users");
+		MongoCollection<Document> mc = mb.getCollection("users");
 		List<BasicDBObject> list = new ArrayList<BasicDBObject>();
 		String customerName = request.getParameter("username");
 		String customerPassword = request.getParameter("password");
-		Long customerId = new Date().getTime();
-		Document doc = new Document();
-		doc.append("name", customerName).append("password", customerPassword).append("cid", customerId);
-		mc.insertOne(doc);
-		response.sendRedirect("registered.jsp");
-		
+		String url;
+		MongoCursor<Document> cursor = mc.find(Filters.eq("name",customerName)).iterator();
+		if (cursor.hasNext()) {
+			url = "login_exists.jsp";
+		}
+		else {
+			Document doc = new Document();
+			doc.append("name", customerName).append("password", customerPassword);
+			mc.insertOne(doc);
+			url="registered.jsp";
+		}
+		response.sendRedirect(url);
 	}
 
 	/**
