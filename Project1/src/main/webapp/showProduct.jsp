@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<title>Insert title here</title>
+<title>Product Details</title>
 <style>
 body {
 	background-color: #F3EBF6;
@@ -121,12 +121,17 @@ body {
 			<div class="desc">
 				<h2 class="center"><c:out value="${product.get('description')}"></c:out></h2>
 			</div>
-			<form action="ControllerShoppingCart?pid=${product.get('pid')}" method="post">
-				<input type="submit" class="submit" value="Buy NOW!"
+			<!-- form action="ControllerAddToCart?pid=${product.get('pid')}" method="get">
+				<input type="submit" class="submit" value="Add to Cart"
 					style="background-color: purple; color: white; border-radius: 
 					20px; border: 2px solid white; width: 150px; height: 50px; 
 					position: relative; left: 75%; margin-top: 10%;">
-			</form>
+			</form -->
+			<button onclick="location.href='ControllerAddToCart?pid=${product.get('pid')}'" type="button"
+			style="background-color: purple; color: white; border-radius: 
+					20px; border: 2px solid white; width: 150px; height: 50px; 
+					position: relative; left: 75%; margin-top: 10%;">
+         	Add to Cart</button>
 		</div>
 	</div>
 </body>

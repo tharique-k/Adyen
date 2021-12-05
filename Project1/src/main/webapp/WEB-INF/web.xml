@@ -10,14 +10,8 @@
   	<description></description>
   	<filter-class>com.ecommapp.filters.SessionControl</filter-class>
   </filter>
-  <filter>
-  	<filter-name>ControllerShoppingCartJSP</filter-name>
-  	<display-name>ControllerShoppingCartJSP</display-name>
-  	<description></description>
-  	<filter-class>com.ecommapp.filters.ControllerShoppingCartJSP</filter-class>
-  </filter>
    <filter-mapping>
-  	<filter-name>ControllerShoppingCartJSP</filter-name>
+  	<filter-name>SessionControl</filter-name>
   	<url-pattern>/shoppingCart.jsp</url-pattern>
   </filter-mapping>
   <filter-mapping>
@@ -52,6 +46,10 @@
   	<filter-name>SessionControl</filter-name>
   	<url-pattern>/addProduct.jsp</url-pattern>
   </filter-mapping>
+    <!--  filter-mapping>
+  	<filter-name>SessionControl</filter-name>
+  	<url-pattern>/ControllerAddToCart</url-pattern>
+  </filter-mapping -->
   <listener>	
   	<listener-class>com.ecommapp.listeners.SessionControlListener</listener-class>
   </listener>
@@ -110,6 +108,12 @@
   	<servlet-class>com.ecommapp.servlets.ControllerShoppingCart</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>ControllerAddToCart</servlet-name>
+  	<display-name>ControllerAddToCart</display-name>
+  	<description></description>
+  	<servlet-class>com.ecommapp.servlets.ControllerAddToCart</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>shoppingCart</servlet-name>
   	<display-name>shoppingCart</display-name>
   	<description></description>
@@ -121,6 +125,12 @@
   	<description></description>
   	<servlet-class>com.ecommapp.servlets.ControllerCustomerAuth</servlet-class>
   </servlet>
+   <servlet>
+   	<servlet-name>ControllerShoppingCartJSP</servlet-name>
+   	<display-name>ControllerShoppingCartJSP</display-name>
+   	<description></description>
+   	<servlet-class>com.ecommapp.servlets.ControllerShoppingCartJSP</servlet-class>
+   </servlet>
   <servlet-mapping>
   	<servlet-name>ControllerAdminLogin</servlet-name>
   	<url-pattern>/ControllerAdminLogin</url-pattern>
@@ -161,4 +171,13 @@
   	<servlet-name>ControllerCustomerAuth</servlet-name>
   	<url-pattern>/login</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerShoppingCartJSP</servlet-name>
+  	<url-pattern>/ControllerShoppingCartJSP</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerAddToCart</servlet-name>
+  	<url-pattern>/ControllerAddToCart</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

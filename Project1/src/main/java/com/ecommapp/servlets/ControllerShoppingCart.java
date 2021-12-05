@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,13 +42,15 @@ public class ControllerShoppingCart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		
 		long pid = Long.parseLong(request.getParameter("pid"));
 		MongoClient client = MongoClients.create(MongoSettingLoc.URL);
 		MongoDatabase mb = client.getDatabase(MongoSettingLoc.DbName);
 		MongoCollection mc = mb.getCollection("products");
 		MongoCursor<Document> cursor = mc.find(Filters.eq("pid", pid)).iterator();
-		/*Document document = new Document(cursor.next());
-		int quantity =(Integer) document.get("quantity");
+		Document document = new Document(cursor.next());
+		/*int quantity =(Integer) document.get("quantity");
 		BasicDBObject query = new BasicDBObject();
 		query.append("$set", new BasicDBObject().append("quantity", quantity+1));
 		BasicDBObject searchQuery = new BasicDBObject().append("pid", pid);
@@ -73,8 +76,11 @@ public class ControllerShoppingCart extends HttpServlet {
 		BasicDBObject searchQuery = new BasicDBObject().append("pid", pid);
 		mc.updateOne(searchQuery, query);*/
 		list.add(document); 
-		request.setAttribute("shoppingProducts", list);
-		response.sendRedirect("shoppingCart.jsp");
+		ServletContext servletContext = getServletContext();
+		RequestDispatcher rd = servletContext.getRequestDispatcher("/shoppingCart.jsp");
+		rd.forward(request, response);
+//		request.setAttribute("shoppingProducts", list);
+//		response.sendRedirect("shoppingCart.jsp");
 	}
 
 }

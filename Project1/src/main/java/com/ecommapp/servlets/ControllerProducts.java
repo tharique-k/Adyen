@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.bson.Document;
 
 import com.ecommapp.database.mongo.MongoSettingLoc;
+import com.ecommapp.models.Products;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -39,16 +40,18 @@ public class ControllerProducts extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		MongoClient client = MongoClients.create(MongoSettingLoc.URL);
-		MongoDatabase mb = client.getDatabase(MongoSettingLoc.DbName);
-		MongoCollection <Document> mc = mb.getCollection("products");
-		MongoCursor<Document> itDoc = mc.find().iterator();
-		List<Document> document = new ArrayList<Document>();
-        while(itDoc.hasNext()) {
-        	document.add(new Document(itDoc.next()));
+		MongoClient mongoClient = MongoSettingLoc.getMongoClient();
+		MongoDatabase db = mongoClient.getDatabase(MongoSettingLoc.DbName);
+		
+		MongoCollection<Products> items = db.getCollection("products",Products.class);
+		
+		MongoCursor<Products> cursor = items.find().iterator();
+		List<Products> products = new ArrayList<Products>();
+        while(cursor.hasNext()) {
+        	products.add(cursor.next());
         }
 //      System.out.println(document.get(0).get("name"));
-        request.setAttribute("prods", document);
+        request.setAttribute("prods", products);
 		RequestDispatcher rd = request.getRequestDispatcher("products.jsp");
 		rd.forward(request, response);
 	}

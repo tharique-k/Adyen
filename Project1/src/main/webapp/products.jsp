@@ -72,10 +72,10 @@ p{
 	<c:forEach items="${prods}" var="item">
 				
 				<div class="product" id="margin3">
-					<img src="${item.get('url')}">
+					<img src="${item.getUrl()}">
 					<p>
-						<a href="ControllerShowProduct?pid=${item.get('pid')}">
-							${item.get('name')}--${item.get('price')} AUD</a>
+						<a href="ControllerShowProduct?pid=${item.getPid()}">
+							${item.getName()}--${item.getPrice()} AUD</a>
 					</p>
 				</div>
 

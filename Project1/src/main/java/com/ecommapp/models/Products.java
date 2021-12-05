@@ -16,7 +16,9 @@ public class Products {
 	private String description;
 	private String url;
 	
-	
+	public Products() {
+		
+	}
 	
 	public Products(String name, float price, String description, String url) {
 		this.id = new ObjectId();
@@ -26,7 +28,6 @@ public class Products {
 		this.description = description;
 		this.url = url;
 	}
-	
 	public ObjectId getId() {
 		return id;
 	}
