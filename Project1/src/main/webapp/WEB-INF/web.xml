@@ -90,12 +90,6 @@
   	<servlet-class>com.ecommapp.servlets.ControllerProducts</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>ShoppingCart</servlet-name>
-  	<display-name>ShoppingCart</display-name>
-  	<description></description>
-  	<servlet-class>com.ecommapp.servlets.ShoppingCart</servlet-class>
-  </servlet>
-  <servlet>
   	<servlet-name>ControllerCustomerRegister</servlet-name>
   	<display-name>ControllerCustomerRegister</display-name>
   	<description></description>
@@ -113,12 +107,6 @@
   	<description></description>
   	<servlet-class>com.ecommapp.servlets.ControllerAddToCart</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>shoppingCart</servlet-name>
-  	<display-name>shoppingCart</display-name>
-  	<description></description>
-  	<servlet-class>com.ecommapp.servlets.shoppingCart</servlet-class>
-  </servlet>
    <servlet>
   	<servlet-name>ControllerCustomerAuth</servlet-name>
   	<display-name>ControllerCustomerAuth</display-name>
@@ -130,6 +118,18 @@
    	<display-name>ControllerShoppingCartJSP</display-name>
    	<description></description>
    	<servlet-class>com.ecommapp.servlets.ControllerShoppingCartJSP</servlet-class>
+   </servlet>
+   <servlet>
+   	<servlet-name>ControllerCheckOut</servlet-name>
+   	<display-name>ControllerCheckOut</display-name>
+   	<description></description>
+   	<servlet-class>com.ecommapp.servlets.ControllerCheckOut</servlet-class>
+   </servlet>
+   <servlet>
+   	<servlet-name>ControllerDeleteFromCart</servlet-name>
+   	<display-name>ControllerDeleteFromCart</display-name>
+   	<description></description>
+   	<servlet-class>com.ecommapp.servlets.ControllerDeleteFromCart</servlet-class>
    </servlet>
   <servlet-mapping>
   	<servlet-name>ControllerAdminLogin</servlet-name>
@@ -152,19 +152,11 @@
   	<url-pattern>/products</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>ShoppingCart</servlet-name>
-  	<url-pattern>/ShoppingCart</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
   	<servlet-name>ControllerCustomerRegister</servlet-name>
   	<url-pattern>/register</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>ControllerShoppingCart</servlet-name>
-  	<url-pattern>/ControllerShoppingCart</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>shoppingCart</servlet-name>
   	<url-pattern>/shoppingCart</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
@@ -179,5 +171,12 @@
   	<servlet-name>ControllerAddToCart</servlet-name>
   	<url-pattern>/ControllerAddToCart</url-pattern>
   </servlet-mapping>
-  
+  <servlet-mapping>
+  	<servlet-name>ControllerCheckOut</servlet-name>
+  	<url-pattern>/checkOut</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+  	<servlet-name>ControllerDeleteFromCart</servlet-name>
+  	<url-pattern>/ControllerDeleteFromCart</url-pattern>
+  </servlet-mapping>
 </web-app>

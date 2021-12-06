@@ -44,7 +44,9 @@ body {
 			</a></li>
 			<li class="nav-item "><a class="nav-link" href="./products">Products</a>
 			</li>
-			<li class="nav-item active"><a class="nav-link" href="./logOut">Logout</a>
+			<li class="nav-item active"><a class="nav-link" href="./shoppingCart">My Cart</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="./logOut">Logout</a>
 			</li>
 		</ul>
 	</div>

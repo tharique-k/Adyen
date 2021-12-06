@@ -11,10 +11,13 @@
 <title>Shopping Cart</title>
 </head>
 <body>
-	<c:forEach items="${shoppingProducts}" var="item">
+	<c:forEach items="${cart.getProducts()}" var="item">
 		<a href="ControllerShowProduct?pid=${item.getPid()}"><c:out value="${item.getName()}"></c:out></a>
-		<a href="./ControllerShoppingCart?pid=${item.getPid()}">Delete</a>
-<br>
+		<a href="./ControllerDeleteFromCart?pid=${item.getPid()}">Delete</a>
+	<br>
 	</c:forEach>
+	<br>
+	<p> total is :${cart.getTotal()}</p>
+	<a href="checkOut">Check Out</a>
 </body>
 </html>

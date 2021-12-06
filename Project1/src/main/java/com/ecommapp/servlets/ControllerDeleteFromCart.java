@@ -30,13 +30,13 @@ import com.mongodb.client.model.Filters;
 /**
  * Servlet implementation class ControllerAddToCart
  */
-public class ControllerAddToCart extends HttpServlet {
+public class ControllerDeleteFromCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ControllerAddToCart() {
+    public ControllerDeleteFromCart() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -63,7 +63,7 @@ public class ControllerAddToCart extends HttpServlet {
 			MongoCollection<Products> items = db.getCollection("products",Products.class);
 			MongoCursor<Products> cursor = items.find(eq("pid",pid)).iterator();
 			while(cursor.hasNext()) {
-				cart.addProduct(cursor.next());
+				cart.removeProduct(cursor.next());
 			}
 			request.setAttribute("cart", cart);
 			ServletContext servletContext = getServletContext();

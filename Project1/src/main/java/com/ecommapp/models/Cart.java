@@ -1,10 +1,8 @@
 package com.ecommapp.models;
 
 import static com.mongodb.client.model.Filters.eq;
-import static com.mongodb.client.model.Updates.pushEach;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -20,12 +18,15 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+
 import static com.mongodb.client.model.Updates.*;
 
 public class Cart implements HttpSessionBindingListener{
 
 	private String name;
 	private List<Products> products = new ArrayList<Products>();
+	private float total = 0.0F;
+	
 	
 	public Cart() {
 		
@@ -38,6 +39,10 @@ public class Cart implements HttpSessionBindingListener{
 		
 		this.name = name;
 		this.products  = products;
+		Iterator<Products> itr = products.iterator();
+		while(itr.hasNext()) {	
+			this.total += itr.next().getPrice();
+		}
 		
 	}
 	public static Cart getCart(String name) {
@@ -77,8 +82,23 @@ public class Cart implements HttpSessionBindingListener{
 						}
 					}
 			this.products.add(product);
+			this.total+=product.getPrice();
 			return true;
 		
+	}
+	/**
+	 * 
+	 * @param pid
+	 * @return true if the product is found and delted.
+	 * false if the product is not found.
+	 */
+	public boolean removeProduct(Products product) {	
+		
+		if	(this.products.remove(product)) {
+			total -= product.getPrice();
+			return true;
+		}
+		else return false;	
 	}
 	
 	public String getName() {
@@ -89,10 +109,15 @@ public class Cart implements HttpSessionBindingListener{
 		this.name = name;
 	}
 	
+	public void setTotal(float total) {
+		this.total = total;
+	}
+	public float getTotal() {
+		return this.total;
+	}
 	public List<Products> getProducts() {
 		return products;
 	}
-
 
 	public void setProducts(List<Products> products) {
 		this.products = products;
@@ -101,15 +126,15 @@ public class Cart implements HttpSessionBindingListener{
 		MongoClient mongoClient = MongoSettingLoc.getMongoClient();
 		MongoDatabase db = mongoClient.getDatabase(MongoSettingLoc.DbName);
 		MongoCollection<Document> coll = db.getCollection("carts");
-		
-		Iterator<Products> itr = this.products.iterator();
 		BasicDBObject whereQuery = new BasicDBObject();
 		whereQuery.put("name", this.name);
 		MongoCursor<Document> cursor = coll.find(whereQuery).iterator();
 		if(cursor.hasNext()) {
 				
 				Bson filter = eq("name", name);
-				Bson update = addEachToSet("carts",this.products);
+				Bson update = addEachToSet("products",this.products);
+				coll.updateOne(filter, update);
+				update = set("total",this.total);
 				coll.updateOne(filter, update);
 				
 		}

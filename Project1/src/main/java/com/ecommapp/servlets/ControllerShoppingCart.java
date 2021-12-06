@@ -10,10 +10,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.bson.Document;
 
 import com.ecommapp.database.mongo.MongoSettingLoc;
+import com.ecommapp.models.Cart;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -27,7 +29,6 @@ import com.mongodb.client.model.Filters;
  */
 public class ControllerShoppingCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static List<Document> list = new ArrayList<Document>();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -41,46 +42,39 @@ public class ControllerShoppingCart extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
+		HttpServletRequest req = (HttpServletRequest)request;		
+		HttpServletResponse res = (HttpServletResponse) response;
+		HttpSession session = req.getSession(false);	
+		Cart cart;
 		
-		long pid = Long.parseLong(request.getParameter("pid"));
-		MongoClient client = MongoClients.create(MongoSettingLoc.URL);
-		MongoDatabase mb = client.getDatabase(MongoSettingLoc.DbName);
-		MongoCollection mc = mb.getCollection("products");
-		MongoCursor<Document> cursor = mc.find(Filters.eq("pid", pid)).iterator();
-		Document document = new Document(cursor.next());
-		/*int quantity =(Integer) document.get("quantity");
-		BasicDBObject query = new BasicDBObject();
-		query.append("$set", new BasicDBObject().append("quantity", quantity+1));
-		BasicDBObject searchQuery = new BasicDBObject().append("pid", pid);
-		mc.updateOne(searchQuery, query); 
-		MongoCursor<Document> cursor2 = mc.find(Filters.eq("pid", pid)).iterator() */;
-		list.remove(cursor.next());
-		response.sendRedirect("shoppingCart.jsp");
+		if(session != null && session.getAttribute("name") != null)  {
+			String name = (String) session.getAttribute("name");
+			
+			//No cart in session - create one
+			if(session.getAttribute("cart") == null) {
+				cart = Cart.getCart(name);
+			}
+			//cart is in session, use it
+			else {
+				 cart = (Cart) session.getAttribute("cart");
+				
+			}
+			request.setAttribute("cart", cart);
+			ServletContext servletContext = getServletContext();
+			RequestDispatcher rd = servletContext.getRequestDispatcher("/shoppingCart.jsp");
+			rd.forward(request, response);
+		}
+		else {
+			res.sendRedirect("logged_out.jsp");
+		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		long pid = Long.parseLong(request.getParameter("pid"));
-		MongoClient client = MongoClients.create(MongoSettingLoc.URL);
-		MongoDatabase mb = client.getDatabase(MongoSettingLoc.DbName);
-		MongoCollection mc = mb.getCollection("products");
-		MongoCursor<Document> cursor = mc.find(Filters.eq("pid", pid)).iterator();
-		Document document = new Document(cursor.next());
-		/*int quantity =(Integer) document.get("quantity");
-		BasicDBObject query = new BasicDBObject();
-		query.append("$set", new BasicDBObject().append("quantity", quantity-1));
-		BasicDBObject searchQuery = new BasicDBObject().append("pid", pid);
-		mc.updateOne(searchQuery, query);*/
-		list.add(document); 
-		ServletContext servletContext = getServletContext();
-		RequestDispatcher rd = servletContext.getRequestDispatcher("/shoppingCart.jsp");
-		rd.forward(request, response);
-//		request.setAttribute("shoppingProducts", list);
-//		response.sendRedirect("shoppingCart.jsp");
+		doGet(request,response);
 	}
 
 }
