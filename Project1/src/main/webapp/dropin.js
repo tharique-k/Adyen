@@ -24,16 +24,21 @@ function getPaymentMethods()
 }
 
 */
+const url =""
 async function makePayment(data){
-	const res = await fetch('./paymentsAPIRequest', {
+	const res1 = await fetch(url, {
 			 	 method: 'POST',
 			 	 headers: {
 			    'Content-Type': 'application/json',
 			 			 },
 			  	body: JSON.stringify(data),
 				});
-	const reponse = await res.json();
+	const reponse = await res1.json();
 	return reponse;
+}
+
+function showFinalResult(res){
+	
 }
 
 

@@ -15,7 +15,8 @@ import com.adyen.model.Amount;
 import com.adyen.model.checkout.PaymentsRequest;
 import com.adyen.model.checkout.PaymentsResponse;
 import com.adyen.service.Checkout;
-import com.ecommapp.checkout.Consts;
+import com.adyen.service.exception.ApiException;
+import com.ecommapp.checkout.AdyenVariables;
 
 /**
  * Servlet implementation class PaymentsRequest
@@ -54,19 +55,24 @@ public class PaymentsAPIRequest extends HttpServlet {
 	        buffer.append(line);
 	        buffer.append(System.lineSeparator());
 	    }
-		Client client = new Client(Consts.X_API_KEY,Environment.TEST);
+		Client client = new Client(AdyenVariables.getAPIKey(),Environment.TEST);
 		Checkout checkout = new Checkout(client);
 		PaymentsRequest paymentsRequest = new PaymentsRequest();
-		paymentsRequest.setMerchantAccount(Consts.MERCHANT_ACCOUNT);
+		paymentsRequest.setMerchantAccount(AdyenVariables.getMerchantAccout());
 		// STATE_DATA is the paymentMethod field of an object passed from the front end or client app, deserialized from JSON to a data structure.
-		paymentsRequest.setPaymentMethod(STATE_DATA)
+//		paymentsRequest.setPaymentMethod(STATE_DATA)
 		Amount amount = new Amount();
 		amount.setCurrency("EUR");
 		amount.setValue(1000L);
 		paymentsRequest.setAmount(amount);
 		paymentsRequest.setReference("YOUR_ORDER_NUMBER");
 		paymentsRequest.setReturnUrl("https://your-company.com/checkout?shopperOrder=12xy..");
-		PaymentsResponse paymentsResponse = checkout.payments(paymentsRequest);
+		try {
+			PaymentsResponse paymentsResponse = checkout.payments(paymentsRequest);
+		} catch (ApiException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
