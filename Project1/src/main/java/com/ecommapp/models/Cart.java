@@ -25,7 +25,7 @@ public class Cart implements HttpSessionBindingListener{
 
 	private String name;
 	private List<Products> products = new ArrayList<Products>();
-	private float total = 0.0F;
+	private long total = 0L;
 	
 	
 	public Cart() {
@@ -109,10 +109,10 @@ public class Cart implements HttpSessionBindingListener{
 		this.name = name;
 	}
 	
-	public void setTotal(float total) {
+	public void setTotal(long total) {
 		this.total = total;
 	}
-	public float getTotal() {
+	public long getTotal() {
 		return this.total;
 	}
 	public List<Products> getProducts() {

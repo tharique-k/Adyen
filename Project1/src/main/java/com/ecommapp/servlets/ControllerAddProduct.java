@@ -64,7 +64,7 @@ public class ControllerAddProduct extends HttpServlet {
 			String url = request.getParameter("url");
 			if(name != "" && price!="" && description != "" && url!="") {
 			
-				Products newProduct = new Products(name, Float.parseFloat(price), description, url);
+				Products newProduct = new Products(name, Long.parseLong(price), description, url);
 				items.insertOne(newProduct);
 				
 			}

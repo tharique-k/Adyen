@@ -18,6 +18,6 @@
 	</c:forEach>
 	<br>
 	<p> total is :${cart.getTotal()}</p>
-	<a href="checkOut">Check Out</a>
+	<a href="./adyen/checkout/preview?amount=${cart.getTotal()}">Check Out</a>
 </body>
 </html>

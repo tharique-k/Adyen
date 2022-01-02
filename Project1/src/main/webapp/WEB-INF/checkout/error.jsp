@@ -52,7 +52,7 @@ body {
 	</div>
 	</nav><br><br>
 	<p>
-		Your purchase was successful
+		Your purchase couldn't be completed because of an error.
 	</p>
 </body>
 </html>

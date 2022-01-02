@@ -33,12 +33,13 @@ public class SessionControlListener implements HttpSessionListener {
     public void sessionDestroyed(HttpSessionEvent se)  { 
          // TODO Auto-generated method stub
     	//Alert alert = new Alert();
-    	try {
+    	/*try {
 			response.sendRedirect("/index.jsp");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
     }
 	
 }

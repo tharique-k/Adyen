@@ -30,7 +30,7 @@ async function initCheckout(){
 			         throw Error(error);
 			       });
 			   },
-			 onAdditionalDetails: (state, dropin) => {
+			/* onAdditionalDetails: (state, dropin) => {
 			   // Your function calling your server to make a `/payments/details` request
 			   makeDetailsCall(state.data)
 			     .then(response => {
@@ -45,7 +45,7 @@ async function initCheckout(){
 			     .catch(error => {
 			       throw Error(error);
 			     });
-			 }
+			 } */
 			};
 			
 			const checkout = new AdyenCheckout(configuration);
@@ -103,4 +103,23 @@ function showJSONResults(data){
 }
 function showResults(data){
 	 document.body.innerHTML =  "The value is  : " + data;
+}
+function showFinalResult(response){
+	 switch (response.resultCode){
+		case 'Authorised':
+			window.location.href = '../checkout/success';
+			break;
+		case 'Pending' :
+		case 'Received' :
+			window.location.href = '../checkout/pending';
+			break;
+		case 'Refused' :
+			window.location.href = '../checkout/failed	';
+			break;
+		default:
+			window.location.href = '/checkout/error	';
+			break;
+		
+	}
+
 }

@@ -12,7 +12,7 @@ public class Products {
 	private ObjectId id;
 	private long pid;
 	private String name;
-	private float price;
+	private long price;
 	private String description;
 	private String url;
 	
@@ -20,7 +20,7 @@ public class Products {
 		
 	}
 	
-	public Products(String name, float price, String description, String url) {
+	public Products(String name, long price, String description, String url) {
 		this.id = new ObjectId();
 		this.pid= new Date().getTime();
 		this.name = name;
@@ -57,12 +57,12 @@ public class Products {
 	}
 
 
-	public float getPrice() {
+	public long getPrice() {
 		return price;
 	}
 
 
-	public Products setPrice(float price) {
+	public Products setPrice(long price) {
 		this.price = price;
 		return this;
 	}
