@@ -10,46 +10,6 @@
   	<description></description>
   	<filter-class>com.ecommapp.filters.SessionControl</filter-class>
   </filter>
-   <filter-mapping>
-  	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/shoppingCart.jsp</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-  	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/homeAdmin.jsp</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-  	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/home.jsp</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-  	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/addProduct</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-  	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/products</url-pattern>
-  </filter-mapping>
-   <filter-mapping>
-  	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/products.jsp</url-pattern>
-  </filter-mapping>
-   <filter-mapping>
-  	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/showProduct.jsp</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-  	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/ControllerShowProduct</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-  	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/addProduct.jsp</url-pattern>
-  </filter-mapping>
-    <!--  filter-mapping>
-  	<filter-name>SessionControl</filter-name>
-  	<url-pattern>/ControllerAddToCart</url-pattern>
-  </filter-mapping -->
   <listener>	
   	<listener-class>com.ecommapp.listeners.SessionControlListener</listener-class>
   </listener>
@@ -87,40 +47,16 @@
   	<servlet-class>com.ecommapp.servlets.ControllerShowProduct</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>ControllerProducts</servlet-name>
-  	<display-name>ControllerProducts</display-name>
-  	<description></description>
-  	<servlet-class>com.ecommapp.servlets.ControllerProducts</servlet-class>
-  </servlet>
-  <servlet>
   	<servlet-name>ControllerCustomerRegister</servlet-name>
   	<display-name>ControllerCustomerRegister</display-name>
   	<description></description>
   	<servlet-class>com.ecommapp.servlets.ControllerCustomerRegister</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>ControllerAddToCart</servlet-name>
-  	<display-name>ControllerAddToCart</display-name>
-  	<description></description>
-  	<servlet-class>com.ecommapp.servlets.ControllerAddToCart</servlet-class>
   </servlet>
    <servlet>
    	<servlet-name>ControllerShoppingCartJSP</servlet-name>
    	<display-name>ControllerShoppingCartJSP</display-name>
    	<description></description>
    	<servlet-class>com.ecommapp.servlets.ControllerShoppingCartJSP</servlet-class>
-   </servlet>
-   <servlet>
-   	<servlet-name>ControllerCheckOut</servlet-name>
-   	<display-name>ControllerCheckOut</display-name>
-   	<description></description>
-   	<servlet-class>com.ecommapp.servlets.ControllerCheckOut</servlet-class>
-   </servlet>
-   <servlet>
-   	<servlet-name>ControllerDeleteFromCart</servlet-name>
-   	<display-name>ControllerDeleteFromCart</display-name>
-   	<description></description>
-   	<servlet-class>com.ecommapp.servlets.ControllerDeleteFromCart</servlet-class>
    </servlet>
    <servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
@@ -135,31 +71,11 @@
   	<url-pattern>/addProduct</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>ControllerShowProduct</servlet-name>
-  	<url-pattern>/ControllerShowProduct</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ControllerProducts</servlet-name>
-  	<url-pattern>/products</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
   	<servlet-name>ControllerCustomerRegister</servlet-name>
   	<url-pattern>/register</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>ControllerShoppingCartJSP</servlet-name>
   	<url-pattern>/ControllerShoppingCartJSP</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ControllerAddToCart</servlet-name>
-  	<url-pattern>/ControllerAddToCart</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ControllerCheckOut</servlet-name>
-  	<url-pattern>/checkOut</url-pattern>
-  </servlet-mapping>
-    <servlet-mapping>
-  	<servlet-name>ControllerDeleteFromCart</servlet-name>
-  	<url-pattern>/ControllerDeleteFromCart</url-pattern>
   </servlet-mapping>
 </web-app>

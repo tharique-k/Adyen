@@ -74,7 +74,7 @@ p{
 				<div class="product" id="margin3">
 					<img src="${item.getUrl()}">
 					<p>
-						<a href="ControllerShowProduct?pid=${item.getPid()}">
+						<a href="../product/showProduct?pid=${item.getPid()}">
 							${item.getName()}--${item.getPrice()} AUD</a>
 					</p>
 				</div>

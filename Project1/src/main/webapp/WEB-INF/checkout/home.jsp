@@ -31,7 +31,7 @@ body {
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand">Legit Website</a>
+		class="navbar-brand">Ecomm Website</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarNav" aria-controls="navbarNav"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@ body {
 	</div>
 	</nav><br><br>
 	<p>
-		Welcome, 
+		Welcome to the Ecommerce App, 
 		<c:out value="${name}"></c:out>
 	</p>
 	<p>

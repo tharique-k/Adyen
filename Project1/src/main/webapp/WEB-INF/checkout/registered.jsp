@@ -3,17 +3,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 
-<title>Register</title>
+<title>Sign in</title>
 <style type="text/css">
 body {
-	background-color: #ba0000;
+	background-color: #F3EBF6;
 	font-family: 'Ubuntu', sans-serif;
 }
 
 .main {
 	background-color: #FFFFFF;
 	width: 400px;
-	height: 400px;
+	height: 450px;
 	margin: 7em auto;
 	border-radius: 1.5em;
 	box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -21,7 +21,7 @@ body {
 
 .sign {
 	padding-top: 40px;
-	color: red;
+	color: #8C55AA;
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: bold;
 	font-size: 23px;
@@ -79,7 +79,7 @@ form.form1 {
 	cursor: pointer;
 	border-radius: 5em;
 	color: #fff;
-	background: linear-gradient(to right, red, red);
+	background: linear-gradient(to right, #9C27B0, #E040FB);
 	border: 0;
 	padding-left: 40px;
 	padding-right: 40px;
@@ -96,6 +96,11 @@ form.form1 {
 	color: #E1BEE7;
 	padding-top: 15px;
 }
+.success {
+	text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+	color: #E1BE97;
+	padding-top: 15px;
+}
 
 a {
 	text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
@@ -108,15 +113,22 @@ a {
 	}
 }
 </style>
+<!--   script>
+	function signIn(){
+		document.Form1.action = "Controller_customerLogin";
+	}
+	
+</script -->
 </head>
 <body>
 	<div class="main">
-		<p class="sign" align="center">Register</p>
-		<form action="register" method="post" class="form1">
-			<input class="un" type="text" align="center" placeholder="username" name="username">
-			<input class="pass" type="password" align="center" placeholder="password" name="password">
-			<input type="submit" class="submit" align="center" value="Register">
-			<p class="error-box">Username already exists, Please try a different one</p>
+		<p class="sign" align="center">Sign in</p>
+		<form action="./login" method="post" class="form1">
+			<input class="un" type="text" align="center" placeholder="Username" name="username">
+			<input class="pass" type="password" align="center" placeholder="Password" name="password">
+			<input type="submit" class="submit" align="center" value="Sign in">
+			<p class="success" align="center"> Registration Successful! Please login</p>
+			<p class="forgot" align="center"> <a href="./login_admin.jsp">Admin Login</a></p>
 		</form>
 	</div>
 </body>

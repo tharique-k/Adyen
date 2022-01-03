@@ -24,6 +24,7 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 
 @Controller
 @RequestMapping("/home")
@@ -51,7 +52,7 @@ public class HomePageController {
 			session.setAttribute("name", name);
 			session.setAttribute("type", "customer");
 		} else {
-			view = "no_login";
+			view = "error_login";
 		}
 		
 		return view;
@@ -74,7 +75,7 @@ public class HomePageController {
 				 cart = (Cart) session.getAttribute("cart");
 				
 			}
-			request.setAttribute("cart", cart);
+			session.setAttribute("cart", cart);
 			return "shoppingCart";
 		}
 		else {
@@ -128,16 +129,25 @@ public class HomePageController {
 		return "logged_out";
 	}
 	
-	@GetMapping("/<>")
-	public String getReplace(HttpServletRequest request) {
-		HttpSession session = request.getSession(false);	
-		if(session != null && session.getAttribute("name") != null)  {
-			return "replace";
+	@GetMapping("/register")
+	public String registerUser(HttpServletRequest request) {
+		MongoClient client = MongoClients.create(MongoSettingLoc.URL);
+		MongoDatabase mb = client.getDatabase(MongoSettingLoc.DbName);
+		MongoCollection<Document> mc = mb.getCollection("users");
+		List<BasicDBObject> list = new ArrayList<BasicDBObject>();
+		String customerName = request.getParameter("username");
+		String customerPassword = request.getParameter("password");
+		String url;
+		MongoCursor<Document> cursor = mc.find(Filters.eq("name",customerName)).iterator();
+		if (cursor.hasNext()) {
+			return "login_exists";
 		}
 		else {
-			return "no_login";
+			Document doc = new Document();
+			doc.append("name", customerName).append("password", customerPassword);
+			mc.insertOne(doc);
+			return "registered";
 		}
-		
 	}
 	
 	

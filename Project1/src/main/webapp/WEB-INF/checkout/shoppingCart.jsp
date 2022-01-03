@@ -12,8 +12,8 @@
 </head>
 <body>
 	<c:forEach items="${cart.getProducts()}" var="item">
-		<a href="ControllerShowProduct?pid=${item.getPid()}"><c:out value="${item.getName()}"></c:out></a>
-		<a href="./ControllerDeleteFromCart?pid=${item.getPid()}">Delete</a>
+		<a href="../product/showProduct?pid=${item.getPid()}"><c:out value="${item.getName()}"></c:out></a>
+		<a href="../product/deleteFromCart?pid=${item.getPid()}">Delete</a>
 	<br>
 	</c:forEach>
 	<br>
