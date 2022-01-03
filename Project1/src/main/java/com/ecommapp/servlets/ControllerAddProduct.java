@@ -7,19 +7,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JDialog;
-import javax.swing.JOptionPane;
 
-import org.bson.Document;
 
 import com.ecommapp.database.mongo.MongoSettingLoc;
-import com.ecommapp.models.Alert;
-import com.ecommapp.models.Item;
 import com.ecommapp.models.Products;
 import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 

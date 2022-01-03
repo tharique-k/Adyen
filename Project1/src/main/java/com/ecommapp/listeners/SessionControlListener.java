@@ -5,8 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import com.ecommapp.models.Alert;
-
 /**
  * Application Lifecycle Listener implementation class SessionControlListener
  *

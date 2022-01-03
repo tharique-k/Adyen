@@ -140,21 +140,9 @@
    	<description></description>
    	<servlet-class>com.ecommapp.servlets.ControllerDeleteFromCart</servlet-class>
    </servlet>
-   <servlet>
-   	<servlet-name>JSONServlet</servlet-name>
-   	<display-name>JSONServlet</display-name>
-   	<description></description>
-   	<servlet-class>com.ecommapp.database.mongo.JSONServlet</servlet-class>
-   </servlet>
-   <servlet>
-   	<servlet-name>PaymentsAPIRequest</servlet-name>
-   	<display-name>PaymentsAPIRequest</display-name>
-   	<description></description>
-   	<servlet-class>com.ecommapp.checkout.api.PaymentsAPIRequest</servlet-class>
-   </servlet>
    <servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/adyen/*</url-pattern>
+		<url-pattern>/checkout/*</url-pattern>
 	</servlet-mapping>
   <servlet-mapping>
   	<servlet-name>ControllerAdminLogin</servlet-name>
@@ -204,12 +192,4 @@
   	<servlet-name>ControllerDeleteFromCart</servlet-name>
   	<url-pattern>/ControllerDeleteFromCart</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
-    	<servlet-name>JSONServlet</servlet-name>
-    	<url-pattern>/jsonServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-    	<servlet-name>PaymentsAPIRequest</servlet-name>
-    	<url-pattern>/paymentsAPIRequest</url-pattern>
-    </servlet-mapping>
 </web-app>
