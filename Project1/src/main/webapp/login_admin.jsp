@@ -118,9 +118,9 @@ a {
 <body>
 	<div class="main">
 		<p class="sign" align="center">Sign in (Admin)</p>
-		<form action="ControllerAdminLogin" method="post" class="form1">
+		<form action="adyen/admin/login" method="post" class="form1">
 			<input class="un" type="text" align="center" placeholder="Username" name="username">
-			<input class="pass" type="password" align="center" placeholder="Password" name="Password">
+			<input class="pass" type="password" align="center" placeholder="Password" name="password">
 			<input type="submit" class="submit" align="center" value="Sign in">
 			<p class="forgot" align="center"> <a href="#">Forgot Password?</a></p>
 		</form>

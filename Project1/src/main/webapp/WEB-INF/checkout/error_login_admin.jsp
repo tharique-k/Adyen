@@ -6,22 +6,23 @@
 <title>Sign in</title>
 <style type="text/css">
 body {
-	background-color: #F3EBF6;
+	background-color: #ba0000;
 	font-family: 'Ubuntu', sans-serif;
 }
 
 .main {
 	background-color: #FFFFFF;
 	width: 400px;
-	height: 450px;
+	height: 430px;
 	margin: 7em auto;
 	border-radius: 1.5em;
 	box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
+
 .sign {
 	padding-top: 40px;
-	color: #8C55AA;
+	color: red;
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: bold;
 	font-size: 23px;
@@ -71,6 +72,19 @@ form.form1 {
 	font-family: 'Ubuntu', sans-serif;
 }
 
+.error-box{
+	width: 100%;
+	color: red;
+	font-weight: 700;
+	font-size: 11px;
+	letter-spacing: 1px;
+	background: rgba(0, 0, 0, 0);
+	margin-top: 30px;
+	margin-left: 10px;
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+}
+
 .un:focus, .pass:focus {
 	border: 2px solid rgba(0, 0, 0, 0.18) !important;
 }
@@ -79,7 +93,7 @@ form.form1 {
 	cursor: pointer;
 	border-radius: 5em;
 	color: #fff;
-	background: linear-gradient(to right, #9C27B0, #E040FB);
+	background: linear-gradient(to right, red, red);
 	border: 0;
 	padding-left: 40px;
 	padding-right: 40px;
@@ -102,28 +116,22 @@ a {
 	color: #E1BEE7;
 	text-decoration: none
 }
+
 @media ( max-width : 600px) {
 	.main {
 		border-radius: 0px;
 	}
 }
 </style>
-<!--   script>
-	function signIn(){
-		document.Form1.action = "Controller_customerLogin";
-	}
-	
-</script -->
 </head>
 <body>
 	<div class="main">
-		<p class="sign" align="center">Sign In</p>
-		<form action="/login" method="post" class="form1">
+		<p class="sign" align="center">Sign in</p>
+		<form action="./login" method="post" class="form1">
 			<input class="un" type="text" align="center" placeholder="Username" name="username">
 			<input class="pass" type="password" align="center" placeholder="Password" name="password">
 			<input type="submit" class="submit" align="center" value="Sign in">
-			<p class="forgot" align="center"> <a href="./customerRegister.jsp">Register</a></p>
-			<p class="forgot" align="center"> <a href="./login_admin.jsp">Admin Login</a></p>
+			<p class="error-box">Username or Password is not correct, Please try again</p>
 		</form>
 	</div>
 </body>

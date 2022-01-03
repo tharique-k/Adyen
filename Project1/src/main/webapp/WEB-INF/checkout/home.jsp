@@ -26,7 +26,7 @@ body {
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Home Admin</title>
+<title>Home</title>
 </head>
 <body>
 
@@ -56,8 +56,8 @@ body {
 		<c:out value="${name}"></c:out>
 	</p>
 	<p>
-		Session max Inactive date:
-		<c:out value="${pageContext.session.maxInactiveInterval}"></c:out>
+		<!--  Session max Inactive date:
+		<c:out value="${pageContext.session.maxInactiveInterval}"></c:out>  -->
 	</p>
 </body>
 </html>

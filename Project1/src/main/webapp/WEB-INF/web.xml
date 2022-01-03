@@ -22,60 +22,8 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-  <servlet>
-  	<servlet-name>ControllerAdminLogin</servlet-name>
-  	<display-name>ControllerAdminLogin</display-name>
-  	<description></description>
-  	<servlet-class>com.ecommapp.servlets.ControllerAdminLogin</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>homeAdmin</servlet-name>
-  	<display-name>homeAdmin</display-name>
-  	<description></description>
-  	<servlet-class>com.ecommapp.servlets.homeAdmin</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>ControllerAddProduct</servlet-name>
-  	<display-name>ControllerAddProduct</display-name>
-  	<description></description>
-  	<servlet-class>com.ecommapp.servlets.ControllerAddProduct</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>ControllerShowProduct</servlet-name>
-  	<display-name>ControllerShowProduct</display-name>
-  	<description></description>
-  	<servlet-class>com.ecommapp.servlets.ControllerShowProduct</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>ControllerCustomerRegister</servlet-name>
-  	<display-name>ControllerCustomerRegister</display-name>
-  	<description></description>
-  	<servlet-class>com.ecommapp.servlets.ControllerCustomerRegister</servlet-class>
-  </servlet>
-   <servlet>
-   	<servlet-name>ControllerShoppingCartJSP</servlet-name>
-   	<display-name>ControllerShoppingCartJSP</display-name>
-   	<description></description>
-   	<servlet-class>com.ecommapp.servlets.ControllerShoppingCartJSP</servlet-class>
-   </servlet>
    <servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/adyen/*</url-pattern>
 	</servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ControllerAdminLogin</servlet-name>
-  	<url-pattern>/ControllerAdminLogin</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ControllerAddProduct</servlet-name>
-  	<url-pattern>/addProduct</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ControllerCustomerRegister</servlet-name>
-  	<url-pattern>/register</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ControllerShoppingCartJSP</servlet-name>
-  	<url-pattern>/ControllerShoppingCartJSP</url-pattern>
-  </servlet-mapping>
 </web-app>

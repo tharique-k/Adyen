@@ -6,7 +6,7 @@
 <title>Sign in</title>
 <style type="text/css">
 body {
-	background-color: #ba0000;
+	background-color: #F3EBF6;
 	font-family: 'Ubuntu', sans-serif;
 }
 
@@ -22,7 +22,7 @@ body {
 
 .sign {
 	padding-top: 40px;
-	color: red;
+	color: #8C55AA;
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: bold;
 	font-size: 23px;
@@ -93,7 +93,7 @@ form.form1 {
 	cursor: pointer;
 	border-radius: 5em;
 	color: #fff;
-	background: linear-gradient(to right, red, red);
+	background: linear-gradient(to right, #9C27B0, #E040FB);
 	border: 0;
 	padding-left: 40px;
 	padding-right: 40px;
@@ -123,21 +123,16 @@ a {
 	}
 }
 </style>
-<script>
-	function signIn(){
-		document.Form1.action = "Controller_customerLogin";
-	}
-</script>
 </head>
 <body>
 	<div class="main">
 		<p class="sign" align="center">Sign in</p>
-		<form name="Form1" method="post" class="form1">
-			<input class="un" type="text" align="center" placeholder="Username" name=customerName">
-			<input class="pass" type="password" align="center" placeholder="Password" name="customerPassword">
-			<input onclick="signIn()" type="submit" class="submit" align="center" value="Sign in">
-			<p class="error-box">Username or Password is not correct, Please try again</p>
-			<p class="forgot" align="center"> <a href="./customerRegister.jsp">Register</a></p>
+		<form action="./login" method="post" class="form1">
+			<input class="un" type="text" align="center" placeholder="Username" name="username">
+			<input class="pass" type="password" align="center" placeholder="Password" name="password">
+			<input type="submit" class="submit" align="center" value="Sign in">
+			<p class="error-box">Session Expired, You need to login to view this page</p>
+			<p class="forgot" align="center"> <a href="#">Forgot Password?</a></p>
 		</form>
 	</div>
 </body>

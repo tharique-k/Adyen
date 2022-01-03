@@ -122,8 +122,7 @@ a {
 			<input class="un" type="text" align="center" placeholder="Username" name="username">
 			<input class="pass" type="password" align="center" placeholder="Password" name="password">
 			<input type="submit" class="submit" align="center" value="Sign in">
-			<p class="forgot" align="center"> <a href="./customerRegister.jsp">Register</a></p>
-			<p class="forgot" align="center"> <a href="./login_admin.jsp">Admin Login</a></p>
+			<p class="forgot" align="center"> <a href="../../login_admin.jsp">Admin Login</a></p>
 		</form>
 	</div>
 </body>

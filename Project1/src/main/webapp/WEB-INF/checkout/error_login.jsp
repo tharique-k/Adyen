@@ -123,21 +123,16 @@ a {
 	}
 }
 </style>
-<script>
-	function signIn(){
-		document.Form1.action = "Controller_customerLogin";
-	}
-</script>
 </head>
 <body>
 	<div class="main">
 		<p class="sign" align="center">Sign in</p>
-		<form name="Form1" method="post" class="form1">
-			<input class="un" type="text" align="center" placeholder="Username" name=customerName">
-			<input class="pass" type="password" align="center" placeholder="Password" name="customerPassword">
-			<input onclick="signIn()" type="submit" class="submit" align="center" value="Sign in">
+		<form action="./login" method="post" class="form1">
+			<input class="un" type="text" align="center" placeholder="Username" name="username">
+			<input class="pass" type="password" align="center" placeholder="Password" name="password">
+			<input type="submit" class="submit" align="center" value="Sign in">
 			<p class="error-box">Username or Password is not correct, Please try again</p>
-			<p class="forgot" align="center"> <a href="./customerRegister.jsp">Register</a></p>
+			<p class="forgot" align="center"> <a href="./register">Register</a></p>
 		</form>
 	</div>
 </body>

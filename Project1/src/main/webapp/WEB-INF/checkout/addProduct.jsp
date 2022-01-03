@@ -24,11 +24,23 @@ body {
 .navbar-nav {
 	width: 100%;
 }
+.error-box{
+	width: 100%;
+	color: red;
+	font-weight: 700;
+	font-size: 11px;
+	letter-spacing: 1px;
+	background: rgba(0, 0, 0, 0);
+	margin-top: 30px;
+	margin-left: 10px;
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+}
 </style>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand">E-Ticaret Sitemiz</a>
+		class="navbar-brand">Add Product Details</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarNav" aria-controls="navbarNav"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +55,7 @@ body {
 			</li>
 			<li class="nav-item "><a class="nav-link" href="./products">Products</a>
 			</li>
-			<li class="nav-item active"><a class="nav-link" href="./logOut">Logout</a>
+			<li class="nav-item active"><a class="nav-link" href="./logout">Logout</a>
 			</li>
 		</ul>
 	</div>
@@ -55,6 +67,7 @@ body {
 		Description: <input type="text" style="height: 50px"name="description"><br><br>
 		Image Url: <input type="text" name="url"> <br>
 		<br><input type="submit" value="Add">
+		<p class="error-box"><%=request.getAttribute("error")%></p>
 	</form>
 </body>
 </html>

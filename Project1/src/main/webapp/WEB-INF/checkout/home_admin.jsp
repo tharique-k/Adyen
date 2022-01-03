@@ -31,7 +31,7 @@ body {
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand">Legit Website</a>
+		class="navbar-brand">Ecomm Website Admin Page</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarNav" aria-controls="navbarNav"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -39,14 +39,14 @@ body {
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="./homeAdmin.jsp">Admin-Home
+			<li class="nav-item"><a class="nav-link" href="./home">Admin-Home
 					<span class="sr-only">(current)</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="./addProduct">Add-Product</a>
 			</li>
-			<li class="nav-item "><a class="nav-link" href="./products_admin.jsp">Products</a>
+			<li class="nav-item "><a class="nav-link" href="./products">Products</a>
 			</li>
-			<li class="nav-item active"><a class="nav-link" href="./logOut">Logout</a>
+			<li class="nav-item active"><a class="nav-link" href="./logout">Logout</a>
 			</li>
 		</ul>
 	</div>
@@ -56,8 +56,8 @@ body {
 		<c:out value="${name}"></c:out>
 	</p>
 	<p>
-		Session max Inactive date:
-		<c:out value="${pageContext.session.maxInactiveInterval}"></c:out>
+	<!-- 	Session max Inactive date:
+		<c:out value="${pageContext.session.maxInactiveInterval}"></c:out>  -->
 	</p>
 </body>
 </html>
