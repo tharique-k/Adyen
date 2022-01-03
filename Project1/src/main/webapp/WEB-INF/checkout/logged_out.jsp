@@ -13,12 +13,11 @@ body {
 .main {
 	background-color: #FFFFFF;
 	width: 400px;
-	height: 430px;
+	height: 450px;
 	margin: 7em auto;
 	border-radius: 1.5em;
 	box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
-
 
 .sign {
 	padding-top: 40px;
@@ -72,19 +71,6 @@ form.form1 {
 	font-family: 'Ubuntu', sans-serif;
 }
 
-.error-box{
-	width: 100%;
-	color: red;
-	font-weight: 700;
-	font-size: 11px;
-	letter-spacing: 1px;
-	background: rgba(0, 0, 0, 0);
-	margin-top: 30px;
-	margin-left: 10px;
-	text-align: center;
-	font-family: 'Ubuntu', sans-serif;
-}
-
 .un:focus, .pass:focus {
 	border: 2px solid rgba(0, 0, 0, 0.18) !important;
 }
@@ -116,23 +102,28 @@ a {
 	color: #E1BEE7;
 	text-decoration: none
 }
-
 @media ( max-width : 600px) {
 	.main {
 		border-radius: 0px;
 	}
 }
 </style>
+<!--   script>
+	function signIn(){
+		document.Form1.action = "Controller_customerLogin";
+	}
+	
+</script -->
 </head>
 <body>
 	<div class="main">
-		<p class="sign" align="center">Sign in</p>
-		<form action="login" method="post" class="form1">
+		<p class="sign" align="center">Sign In</p>
+		<form action="adyen/home/login" method="post" class="form1">
 			<input class="un" type="text" align="center" placeholder="Username" name="username">
-			<input class="pass" type="password" align="center" placeholder="Password" name="Password">
+			<input class="pass" type="password" align="center" placeholder="Password" name="password">
 			<input type="submit" class="submit" align="center" value="Sign in">
-			<p class="error-box">Session Expired, Please try logging in again</p>
-			<p class="forgot" align="center"> <a href="#">Forgot Password?</a></p>
+			<p class="forgot" align="center"> <a href="./customerRegister.jsp">Register</a></p>
+			<p class="forgot" align="center"> <a href="./login_admin.jsp">Admin Login</a></p>
 		</form>
 	</div>
 </body>

@@ -127,11 +127,11 @@ a {
 <body>
 	<div class="main">
 		<p class="sign" align="center">Sign in</p>
-		<form action="login" method="post" class="form1">
+		<form action="adyen/home/login" method="post" class="form1">
 			<input class="un" type="text" align="center" placeholder="Username" name="username">
 			<input class="pass" type="password" align="center" placeholder="Password" name="Password">
 			<input type="submit" class="submit" align="center" value="Sign in">
-			<p class="error-box">Username or Password is not correct, Please try again</p>			
+			<p class="error-box">Session Expired, You need to login to view this page</p>
 			<p class="forgot" align="center"> <a href="#">Forgot Password?</a></p>
 		</form>
 	</div>
