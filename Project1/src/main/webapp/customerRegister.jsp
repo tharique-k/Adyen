@@ -112,7 +112,7 @@ a {
 <body>
 	<div class="main">
 		<p class="sign" align="center">Register</p>
-		<form action="register" method="post" class="form1">
+		<form action="adyen/home/register" method="post" class="form1">
 			<input class="un" type="text" align="center" placeholder="username" name="username">
 			<input class="pass" type="password" align="center" placeholder="password" name="password">
 			<input type="submit" class="submit" align="center" value="Register">

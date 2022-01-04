@@ -89,7 +89,7 @@ public class Cart implements HttpSessionBindingListener{
 	/**
 	 * 
 	 * @param pid
-	 * @return true if the product is found and delted.
+	 * @return true if the product is found and deleted.
 	 * false if the product is not found.
 	 */
 	public boolean removeProduct(Products product) {	
@@ -130,12 +130,15 @@ public class Cart implements HttpSessionBindingListener{
 		whereQuery.put("name", this.name);
 		MongoCursor<Document> cursor = coll.find(whereQuery).iterator();
 		if(cursor.hasNext()) {
-				
-				Bson filter = eq("name", name);
+			MongoCollection<Cart> items = db.getCollection("carts",Cart.class);
+			Bson filter = eq("name", name);
+			items.deleteMany(filter);
+			items.insertOne(this);
+				/*Bson filter = eq("name", name);
 				Bson update = addEachToSet("products",this.products);
 				coll.updateOne(filter, update);
 				update = set("total",this.total);
-				coll.updateOne(filter, update);
+				coll.updateOne(filter, update);*/
 				
 		}
 		else {

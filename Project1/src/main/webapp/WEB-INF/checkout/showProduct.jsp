@@ -6,14 +6,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <title>Product Details</title>
 <style>
 body {
-	background-color: #F3EBF6;
+	/*background-color: #F3EBF6;*/
 	margin: 10px 10px 0px 10px;
 }
-
+.active {
+	margin-left: 70%;
+}
+.navbar-nav {
+	width: 100%;
+}
 .header {
 	width: 100%;
 	height: 15%;
@@ -100,13 +106,28 @@ body {
 </style>
 </head>
 <body>
-	<%
-		//Product product = (Product) request.getAttribute("product");
-		//String name = product.getName();
-		//String desc = product.getDescription();
-		//float price = product.getPrice();
-		//int quantity = product.getQuantity();
-	%>
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+		class="navbar-brand">Ecomm Website</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarNav" aria-controls="navbarNav"
+		aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav">
+			<li class="nav-item active"><a class="nav-link" href="../home/home"> Home
+					<span class="sr-only">(current)</span>
+			</a></li>
+			<li class="nav-item "><a class="nav-link" href="../home/products">Products</a>
+			</li>
+			<li class="nav-item "><a class="nav-link" href="../home/cart">My Cart</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="../home/logout">Logout</a>
+			</li>
+		</ul>
+	</div>
+	</nav><br><br>
 	
 	<div class="header">
 		<h1 class="center"><c:out value="${product.get('name')}"></c:out></h1>
@@ -127,7 +148,7 @@ body {
 					20px; border: 2px solid white; width: 150px; height: 50px; 
 					position: relative; left: 75%; margin-top: 10%;">
 			</form -->
-			<button onclick="location.href='ControllerAddToCart?pid=${product.get('pid')}'" type="button"
+			<button onclick="location.href='./addToCart?pid=${product.get('pid')}'" type="button"
 			style="background-color: purple; color: white; border-radius: 
 					20px; border: 2px solid white; width: 150px; height: 50px; 
 					position: relative; left: 75%; margin-top: 10%;">

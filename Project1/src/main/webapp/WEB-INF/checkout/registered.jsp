@@ -96,6 +96,11 @@ form.form1 {
 	color: #E1BEE7;
 	padding-top: 15px;
 }
+.success {
+	text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+	color: #E1BE97;
+	padding-top: 15px;
+}
 
 a {
 	text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
@@ -117,12 +122,13 @@ a {
 </head>
 <body>
 	<div class="main">
-		<p class="sign" align="center">Sign In</p>
-		<form action="../home/login" method="post" class="form1">
+		<p class="sign" align="center">Sign in</p>
+		<form action="./login" method="post" class="form1">
 			<input class="un" type="text" align="center" placeholder="Username" name="username">
 			<input class="pass" type="password" align="center" placeholder="Password" name="password">
 			<input type="submit" class="submit" align="center" value="Sign in">
-			<p class="forgot" align="center"> <a href="../../login_admin.jsp">Admin Login</a></p>
+			<p class="success" align="center"> Registration Successful! Please login</p>
+			<p class="forgot" align="center"> <a href="./login_admin.jsp">Admin Login</a></p>
 		</form>
 	</div>
 </body>
