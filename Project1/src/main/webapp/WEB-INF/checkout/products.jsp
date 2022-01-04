@@ -96,9 +96,6 @@ p{
 	</div>
 	</nav><br><br>
 	
-	<div class="topBar">
-		<ul><a class="home" href="./home">Products</a></ul>
-	</div>
 
 	<c:forEach items="${prods}" var="item">
 				
